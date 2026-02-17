@@ -1,0 +1,301 @@
+/* body */
+body {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: aqua;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+/* Container wrapper to center content */
+.container {
+  max-width: 1780px;  /* max width instead of fixed */
+  margin: 0 auto;      /* centers horizontally */
+}
+
+/* Navbar */
+.navigation {
+  background-color: rgb(9, 133, 242);
+  height: 60px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 20px;
+  padding: 0 20px;
+}
+
+/* Buttons inside navbar */
+.buttons {
+  display: flex;
+  justify-content: center;  /* centers buttons inside */
+  align-items: center;
+  background-color: white;
+  color: black;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  gap: 10px;
+}
+
+/* Homepage section */
+.homepage {
+  background-color: bisque;
+  max-width: 1780px;
+  height: 840px;
+  margin: 0 auto;   /* centers section */
+}
+
+.blocks{
+  background-color: brown;
+  width: 1780px;
+  height: 850px;
+  display: flex;
+  justify-content: space-evenly;
+  
+  flex-direction: column;
+  align-items: center;
+
+
+
+}
+
+.block1{
+  background-color: black;
+
+
+}
+
+.block2{
+  background-color: rgb(197, 191, 191);
+ 
+display: flex;
+flex-direction: column;
+justify-content: center;
+gap: 30px
+;
+
+}
+
+.booksmonth{
+  display: flex;
+  flex-direction: row;
+  background-color: rgb(0, 0, 0);
+  gap: 30px;
+  width: 1500px;
+  height: 200px;
+  align-items: center;
+  
+  text-align: center;
+  justify-content: space-evenly;
+}
+
+.image{
+
+background-color: black;
+width: 200px;
+height: 150px; ;
+}
+
+
+
+/* allbooks section */
+
+
+.allbookscontainer{
+
+  background-color: aliceblue;
+  width: auto;
+  height: 00px;
+}
+.headerbook{
+  display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: space-around;
+
+
+}
+.booklist{
+
+  background-color: bisque;
+  display: flex;
+  flex-direction: row;
+  width: auto;
+  height: 500px;
+  align-items: center;
+}
+
+.booklist img{
+  width: 90px;
+  height: 100px
+  
+
+ 
+}
+
+.ProjectBook{
+  background-color: black;
+  gap: 10px;
+}
+
+/* book info main */
+
+.bookdetails {
+  background-color: aliceblue;
+  width: auto;
+  height: 900px;
+}
+
+.navbook {
+  background-color: blueviolet;
+}
+
+.headerbookinfo {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.bookinfo {
+  background-color: bisque;
+  width: auto;
+  height: 800px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;   /* 👈 ADD THIS */
+  text-align: center;
+  gap: 10px;
+}
+
+.synopsis-block {
+  background-color: #f4f6f8; /* light block background */
+  padding: 12px 16px;
+  border-left: 4px solid #4a90e2; /* accent color */
+  border-radius: 6px;
+  margin-top: 10px;
+  line-height: 1.5;
+  width: 400px;
+  color: black;
+}
+
+
+.blocksinfo{
+  background-color: rgb(3, 14, 164);
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  width: auto;
+  height: 400px;
+  align-items: center;
+}
+
+.comments{
+  background-color: rgb(191, 22, 207);
+  width: 1270px;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+}
+
+.commentintro{
+
+ display: flex; 
+ flex-direction: row;
+ align-items: center;
+ gap: 10px;
+}
+
+.commentintro button {
+  padding: 8px 16px;
+  cursor: pointer;
+  border: none;
+  width: 60px;
+  height: 40px;
+  border-radius: 6px;
+  background-color: #6c63ff;
+  color: white;
+}
+
+
+/* User reviews container */
+.userreviews {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+   background-color: white;
+   height: 250px;
+   width: 1000px;
+}
+
+
+/* Each review block */
+.userreviews p {
+ 
+  color: black;
+  
+  padding: 15px;
+  border-radius: 8px;
+}
+
+/* about */
+
+
+  .navigationabout {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;  /* space between items */
+  align-items: center;            /* vertical alignment */
+  background-color: blueviolet;
+  padding: 20px;
+}
+
+.navigationabout button {
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
+
+.containerabout {
+  display: flex;
+  justify-content: center;   /* center horizontally */
+  align-items: center;       /* center vertically */
+  min-height: 80vh;          /* takes most of screen height */
+  background-color: #f2f2f2; /* light background */
+}
+
+
+/* Big centered colored block */
+.containerabout > div {
+  background-color: #ffffff;
+  padding: 40px;
+  width: 1000px;
+  height: 600px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+
+/* Inner block for reviews */
+.myreviews {
+  background-color: #e6d6ff;  /* light purple */
+  padding: 20px;
+  height: 500px;
+  margin-top: 20px;
+  border-radius: 8px;
+}
+
+.textreview{
+  color: black;
+}
+
