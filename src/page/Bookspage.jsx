@@ -11,7 +11,7 @@ function Bookspage() {
 
   const getData = async () => {
     try {
-      const response = await axios.get(`http://localhost:5005/books`);
+      const response = await axios.get(`${import.meta.env.VITE_SERVER_URL}/books`);
       console.log(response);
       setAllBooks(response.data);
     } catch (error) {
