@@ -2,7 +2,7 @@ import { Link, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Createcom from "../components/Createcom";
-import Editcom from "../components/editcom";
+import Editcom from "../components/Editcom";
 
 function Bookdetails() {
   const params = useParams();

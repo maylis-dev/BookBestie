@@ -1,13 +1,13 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Nabvar from "./components/navbar";
-import Homepage from "./page/homepage";
+import Navbar from "./components/Navbar";
+import Homepage from "./page/Homepage";
 import Aboutpage from "./page/Aboutpage";
-import Bookspage from "./page/bookspage";
+import Bookspage from "./page/Bookspage";
 import Bookdetails from "./page/Bookdetails";
-import Editcom from "./components/editcom";
+import Editcom from "./components/Editcom";
 import Romancepage from "./page/Romancepage";
 
-import Nonfictionpage from "./page/nonfictionpage";
+import Nonfictionpage from "./page/Nonfictionpage";
 
 import Fictionpage from "./page/Fictionpage";
 function App() {
@@ -18,7 +18,7 @@ function App() {
           path="/"
           element={
             <>
-              <Nabvar />
+              <Navbar />
               <Homepage />
             </>
           }

@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import Editcom from "../components/editcom";
+import Editcom from "../components/Editcom";
 
 function Aboutpage() {
   const [comments, setComments] = useState([]);
