@@ -1,4 +1,3 @@
-
 import axios from "axios";
 import { useEffect, useState } from "react";
 import ProjectBook from "../components/ProjectBook";
@@ -13,7 +12,9 @@ function Nonfictionpage() {
 
   const getData = async () => {
     try {
-      const response = await axios.get(`${import.meta.env.VITE_SERVER_URL}/books`);
+      const response = await axios.get(
+        `${import.meta.env.VITE_SERVER_URL}/books`,
+      );
       console.log(response);
 
       // filter books by non-fiction category
@@ -24,7 +25,7 @@ function Nonfictionpage() {
       setNonfictionBooks(filteredBooks);
     } catch (error) {
       console.log(error);
-      setNonfictionBooks([]); 
+      setNonfictionBooks([]);
     }
   };
 
@@ -33,7 +34,7 @@ function Nonfictionpage() {
   }
 
   return (
-    <div className="allbookscontainer">
+    <div className="allbookscontainers">
       <div className="headerbook">
         <Link to="/">
           <button>Home</button>
@@ -43,11 +44,12 @@ function Nonfictionpage() {
           <button>About</button>
         </Link>
       </div>
-
-      <div className="booklist">
-        {nonfictionBooks.map((eachBook) => (
-          <ProjectBook key={eachBook.id} eachBooks={eachBook} />
-        ))}
+      <div className="allbookscontainer">
+        <div className="booklist">
+          {nonfictionBooks.map((eachBook) => (
+            <ProjectBook key={eachBook.id} eachBooks={eachBook} />
+          ))}
+        </div>
       </div>
     </div>
   );

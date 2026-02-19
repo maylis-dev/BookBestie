@@ -24,20 +24,21 @@ function Bookspage() {
   }
 
   return (
-    <div className="allbookscontainer">
+    <div className="allbookscontainers">
         <div className="headerbook">
            <Link to="/">
-        <button>home</button>
+        <button>Home</button>
       </Link>
-            <h4>all books</h4>
+            <h4>All Books</h4>
             <Link to = "/about">
-            <button>about</button></Link>
+            <button>About</button></Link>
         </div>
-
+<div className="allbookscontainer">
   <div className="booklist">
     {allBooks.map((eachBooks) => {
         return <ProjectBook key = {eachBooks.id} eachBooks= {eachBooks}/>//eachProject={eachProject}/> // {...eachProject}
       })}
+      </div>
   </div>
 
   

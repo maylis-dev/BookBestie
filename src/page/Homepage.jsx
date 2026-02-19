@@ -12,7 +12,7 @@ function Homepage() {
   const getBooks = async () => {
     try {
       const response = await axios.get(`${import.meta.env.VITE_SERVER_URL}/books`);
-      setBestBooks(response.data.slice(0, 4)); // first 4 books
+      setBestBooks(response.data.slice(0, 4));
     } catch (error) {
       console.log("Failed to fetch books:", error);
     }
@@ -30,17 +30,23 @@ function Homepage() {
             <h2>Book of the Month</h2>
           </div>
 
-          <div className="booksmonth" style={{ display: "flex", gap: "10px" }}>
+          <div className="booksmonth">
             {bestBooks.map((book) => (
-              <Link key={book.id} to={`/bookspage/${book.id}`} style={{ textDecoration: "none", color: "inherit" }}>
-                <div style={{ textAlign: "center" }}>
+              <Link
+                key={book.id}
+                to={`/bookspage/${book.id}`}
+                className="book-link"
+              >
+                <div className="book-card">
                   <img
                     src={book.image}
                     alt={book.title}
-                    style={{ width: "150px", height: "220px", objectFit: "cover" }}
+                    className="book-image"
                   />
+                  <div className="texth">
                   <p>{book.title}</p>
                   <p>{book.author}</p>
+                  </div>
                 </div>
               </Link>
             ))}
@@ -52,3 +58,4 @@ function Homepage() {
 }
 
 export default Homepage;
+

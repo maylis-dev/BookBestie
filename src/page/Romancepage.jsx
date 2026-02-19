@@ -12,7 +12,9 @@ function Romancepage() {
 
   const getData = async () => {
     try {
-      const response = await axios.get(`${import.meta.env.VITE_SERVER_URL}/books`);
+      const response = await axios.get(
+        `${import.meta.env.VITE_SERVER_URL}/books`,
+      );
       console.log(response);
 
       // filter books by romance category
@@ -23,7 +25,7 @@ function Romancepage() {
       setRomanceBooks(filteredBooks);
     } catch (error) {
       console.log(error);
-      setRomanceBooks([]); 
+      setRomanceBooks([]);
     }
   };
 
@@ -32,7 +34,7 @@ function Romancepage() {
   }
 
   return (
-    <div className="allbookscontainer">
+    <div className="allbookscontainers">
       <div className="headerbook">
         <Link to="/">
           <button>Home</button>
@@ -42,11 +44,12 @@ function Romancepage() {
           <button>About</button>
         </Link>
       </div>
-
-      <div className="booklist">
-        {romanceBooks.map((eachBook) => (
-          <ProjectBook key={eachBook.id} eachBooks={eachBook} />
-        ))}
+      <div className="allbookscontainer">
+        <div className="booklist">
+          {romanceBooks.map((eachBook) => (
+            <ProjectBook key={eachBook.id} eachBooks={eachBook} />
+          ))}
+        </div>
       </div>
     </div>
   );

@@ -27,7 +27,7 @@ function Navbar() {
     <div className="navigation">
       <div className="container">
         <div className="buttons">
-          <Link to="/" className="explore">explore</Link>
+      
 
           <div className="discover">
             <div onClick={() => setShowCategories(!showCategories)}>

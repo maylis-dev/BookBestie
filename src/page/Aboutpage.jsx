@@ -13,7 +13,6 @@ function Aboutpage() {
 
   const getComments = async () => {
     try {
-      
       const response = await axios.get(
         `${import.meta.env.VITE_SERVER_URL}/comments?_sort=id&_order=desc`
       );
@@ -27,31 +26,27 @@ function Aboutpage() {
     <div>
       <div className="navigationabout">
         <Link to="/">
-          <button>home</button>
+          <button>HOME</button>
         </Link>
-        <h4>about page</h4>
-        <Link to="/about">
-          <button>about</button>
+        <h4>ABOUT</h4>
+        <Link to="/about" className="about-button-link">
+          <button className="about-button"></button>
         </Link>
       </div>
 
       <div className="containerabout">
         <div>
           <div className="textreview">
-            <h4>my review</h4>
+            <h4>My Review</h4>
           </div>
 
           <div className="myreviews">
             {comments.length > 0 ? (
               comments.map((comment) => (
-                <div key={comment.id}>
-                  <p>
-                    <strong>{comment.user}</strong>: {comment.review}
-                  </p>
-
-                  <button onClick={() => setEditCommentId(comment.id)}>
-                    modify
-                  </button>
+                <div key={comment.id} className="review-block">
+                  <span className="review-user">{comment.user}</span>
+                  <span className="review-text">{comment.review}</span>
+                  <button onClick={() => setEditCommentId(comment.id)}>modify</button>
                 </div>
               ))
             ) : (
@@ -61,7 +56,6 @@ function Aboutpage() {
         </div>
       </div>
 
-      
       {editCommentId && (
         <div
           className="modal-overlay"

@@ -6,39 +6,49 @@ function Editcom({ commentId, bookId, getData, closeModal }) {
   const [review, setReview] = useState("");
 
   useEffect(() => {
-    axios
-      .get(`${import.meta.env.VITE_SERVER_URL}/comments/${commentId}`)
-      .then((res) => {
+    const fetchComment = async () => {
+      try {
+        const res = await axios.get(
+          `${import.meta.env.VITE_SERVER_URL}/comments/${commentId}`
+        );
         setUser(res.data.user);
         setReview(res.data.review);
-      })
-      .catch((err) => console.log(err));
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    fetchComment();
   }, [commentId]);
 
+  // UPDATE
   const handleFormSubmit = async (e) => {
     e.preventDefault();
-
     try {
       await axios.put(
         `${import.meta.env.VITE_SERVER_URL}/comments/${commentId}`,
-        { user, review, bookId: Number(bookId) }
+        {
+          user,
+          review,
+          bookId: Number(bookId),
+        }
       );
 
-      getData();     // rafraîchit les commentaires
-      closeModal();  // ferme la popup
+      await getData();   // refresh first
+      closeModal();      // then close modal
     } catch (err) {
       console.log(err);
     }
   };
 
+  // DELETE
   const deleteComment = async () => {
     try {
       await axios.delete(
         `${import.meta.env.VITE_SERVER_URL}/comments/${commentId}`
       );
 
-      getData();
-      closeModal();
+      await getData();   // refresh first
+      closeModal();      // then close modal
     } catch (err) {
       console.log(err);
     }
@@ -66,7 +76,7 @@ function Editcom({ commentId, bookId, getData, closeModal }) {
         <button type="button" onClick={closeModal}>
           Cancel
         </button>
-        <button type="button" onClick={deleteComment}>
+        <button type="button" className="delete-btn" onClick={deleteComment}>
           Delete
         </button>
       </form>

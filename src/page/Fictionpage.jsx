@@ -32,7 +32,7 @@ function Fictionpage() {
   }
 
   return (
-    <div className="allbookscontainer">
+    <div className="allbookscontainers">
       <div className="headerbook">
         <Link to="/">
           <button>Home</button>
@@ -42,11 +42,12 @@ function Fictionpage() {
           <button>About</button>
         </Link>
       </div>
-
+<div className="allbookscontainer">
       <div className="booklist">
         {fictionBooks.map((eachBook) => (
           <ProjectBook key={eachBook.id} eachBooks={eachBook} />
         ))}
+      </div>
       </div>
     </div>
   );

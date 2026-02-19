@@ -1,157 +1,308 @@
-/* body */
 body {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
   color: rgba(255, 255, 255, 0.87);
-  background-color: aqua;
+  background-color: rgb(253, 253, 253);
   text-align: center;
   margin: 0;
   padding: 0;
 }
 
-/* Container wrapper to center content */
-.container {
-  max-width: 1780px;  /* max width instead of fixed */
-  margin: 0 auto;      /* centers horizontally */
-}
-
-/* Navbar */
 .navigation {
-  background-color: rgb(9, 133, 242);
+  background-color: rgb(240, 186, 227);
   height: 60px;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
-  gap: 20px;
   padding: 0 20px;
 }
 
-/* Buttons inside navbar */
+.container {
+  max-width: 1780px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .buttons {
   display: flex;
-  justify-content: center;  /* centers buttons inside */
+  justify-content: center;
   align-items: center;
-  background-color: white;
-  color: black;
-  border: none;
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-  border-radius: 5px;
-  gap: 10px;
+  gap: 15px; /* space between buttons */
 }
+
+.buttons a,
+.buttons .discover > div {
+  background-color:#e86ee6;
+  color: rgb(248, 246, 246);
+  padding: 10px 25px; /* increase horizontal padding */
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 16px;
+  text-align: center;
+  display: inline-block;
+  min-width: 80px; /* ensure minimum width */
+  box-sizing: border-box;
+  white-space: nowrap; /* prevent text from compressing */
+}
+
+.discover {
+  position: relative;
+}
+
+.category-menu {
+  position: absolute;
+  top: 100%; /* below the button */
+  left: 50%; /* start from the middle of the button */
+  transform: translateX(-50%); /* shift left by half its width to center */
+  background-color:#e6d6ff;
+  border-radius: 5px;
+  padding: 5px 0;
+  display: flex;
+  flex-direction: column;
+  min-width: 120px; 
+  z-index: 1000;
+}
+
+.category-menu div {
+  padding: 10px 15px;
+  cursor: pointer;
+  color: black;
+  text-align: center; /* center text inside dropdown */
+  white-space: nowrap;
+}
+
+.category-menu div:hover {
+  background-color: rgb(111, 112, 220);
+}
+
 
 /* Homepage section */
 .homepage {
-  background-color: bisque;
-  max-width: 1780px;
-  height: 840px;
-  margin: 0 auto;   /* centers section */
+  background-color: rgb(241, 218, 239);
+  width: 100%;
+  min-height: 100vh; /* prend toute la hauteur de l'écran */
+  margin: 0 auto;
+  padding: 40px 20px;
+  box-sizing: border-box;
 }
 
-.blocks{
-  background-color: brown;
-  width: 1780px;
-  height: 850px;
+.blocks {
+  width: 100%;
+  max-width: 1200px; /* limite largeur sur grand écran */
+  margin: 0 auto;
   display: flex;
-  justify-content: space-evenly;
-  
   flex-direction: column;
+  gap: 40px; /* espace entre les blocs */
   align-items: center;
-
-
-
 }
 
-.block1{
-  background-color: black;
-
-
+.block1 {
+  background-color: rgb(236, 134, 221);
+  min-height: 250px;
+  width: 100%;
+  max-width: 1000px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  padding: 20px;
 }
 
-.block2{
-  background-color: rgb(197, 191, 191);
- 
-display: flex;
-flex-direction: column;
-justify-content: center;
-gap: 30px
-;
-
+.block1 h1 {
+  text-align: center;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-weight: bolder;
+  font-size: clamp(30px, 5vw, 60px); /* taille responsive */
 }
+
+.block2 {
+  background-color: rgb(253, 250, 250);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 350px;
+  width: 100%;
+  max-width: 900px;
+  border-radius: 40px;
+  padding: 30px;
+}
+
+.block2 h2 {
+  color: #f079ee;
+  text-align: center;
+  font-size: clamp(20px, 3vw, 35px);
+  font-family: "Franklin Gothic Medium", Arial, sans-serif;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
 
 /* container for the books */
 .booksmonth {
-  display: flex;           /* arrange books in a row */
-  gap: 20px;               /* space between books */
-  flex-wrap: wrap;         /* wrap to next line if screen is small */
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: center;   /* center horizontally */
+  align-items: center;       /* optional */
+  margin: 0 auto;            /* better than 0 17px */
 }
+
 
 /* each book card */
 .booksmonth div {
-  text-align: center;      /* center title/author under image */
-  cursor: pointer;         /* shows clickable cursor */
+  text-align: center;
+  cursor: pointer;
 }
 
 /* book images */
 .booksmonth img {
-  width: 150px;            /* fixed width */
-  height: 220px;           /* fixed height */
-  object-fit: cover;       /* crop image proportionally to fit */
+  width: 150px;
+  height: 220px;
+  object-fit: cover;
   display: block;
-  margin: 0 auto 10px;     /* center image and space below for text */
+  margin: 0 auto 10px;
+  border-radius: 20px;
+}
+
+.book-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.book-card {
+  text-align: center;
+}
+
+.book-image {
+  width: 150px;
+  height: 220px;
+  object-fit: cover;
+}
+
+.texth {
+  background-color: #f079ee;
+
+  height: 45px;
+  font-size: 14px;
+  color: #ffffff; /* make text visible on dark bg */
+  margin-top: 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4px 8px; /* optional: add a little padding inside */
+  border-radius: 15px; /* optional: smooth edges */
+}
+
+.texth p {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  margin: 1px 0; /* reduce default top/bottom margin */
 }
 
 
-.image{
-
-background-color: black;
-width: 200px;
-height: 150px; ;
-}
 
 
 
 /* allbooks section */
 
 
-.allbookscontainer{
 
-  background-color: aliceblue;
-  width: auto;
-  height: 00px;
-}
-.headerbook{
-  display: flex;
-flex-direction: row;
-align-items: center;
-justify-content: space-around;
-
-
-}
-.booklist{
-
-  background-color: bisque;
+.headerbook {
   display: flex;
   flex-direction: row;
-  width: auto;
-  height: 500px;
   align-items: center;
+  justify-content: space-around;
+  margin-bottom: 20px;
+  background-color: #ecb9ec;
+   margin-bottom: 0; 
 }
 
-.booklist img{
-  width: 90px;
-  height: 100px
+.headerbook button{
+ background-color:#e86ee6;
+ width: 60px;
+ height: 40px;
+ border-radius: 10px;
+ border-style: none;
+color: white;
+
+}
+.headerbook h4 {
+  font-size: 32px;      /* makes it bigger */
+  font-weight: 800;     /* makes it bolder/fatter */
+  color: #ffffff;       /* optional: white text for contrast */
+  margin: 0;            /* removes default margin */
+}
+
+
+/* Container for the whole page */
+
+
+/* ===== PAGE CONTAINER ===== */
+.allbookscontainer {
+  background-color: aliceblue;
+  width: 100%;
+  min-height: 100vh;
+  padding: 40px 20px; /* space around the pink block */
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;  /* center horizontally */
+}
+
+/* ===== PINK BOOK AREA ===== */
+.booklist {
+  background-color: #fcccfb;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* center books */
+  gap: 25px;
+
+  width: 100%;
+  max-width: 1200px;   /* prevent overflow */
+  padding: 40px;       /* IMPORTANT: space inside so books don't touch border */
+
+  box-sizing: border-box;
+  border-radius: 20px;
+}
+
+/* ===== BLUE BOOK CARD ===== */
+.ProjectBook {
+  background-color: #574fd6;
+  padding: 15px;
+  width: 140px; /* fixed clean size */
   
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
- 
+  color: white;
+  border-radius: 12px;
+  transition: transform 0.2s ease;
 }
 
-.ProjectBook{
-  background-color: black;
-  gap: 10px;
+.ProjectBook:hover {
+  transform: translateY(-5px);
 }
+
+/* ===== BOOK IMAGE ===== */
+.ProjectBook img {
+  width: 100px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+
+
+
+
+
+
+
 
 /* book info main */
 
@@ -164,7 +315,7 @@ justify-content: space-around;
 }
 
 .navbook {
-  background-color: blueviolet;
+  background-color:#e86ee6;
   padding: 10px 0;
 }
 
@@ -189,13 +340,21 @@ justify-content: space-around;
   color: white;
   transition: background-color 0.3s;
 }
+.book-info-title {
+  font-size: 2rem;       /* bigger text */
+  font-weight: 700;      /* bold */
+  letter-spacing: 1px;   /* optional: slightly spaced letters */
+  color: #222;           /* optional: darker color */
+  margin: 0;             /* optional: remove extra spacing */
+}
+
 
 .headerbookinfo button:hover {
   background-color: #574fd6;
 }
 
 .bookinfo {
-  background-color: bisque;
+  background-color:#e6d6ff;
   width: 90%;
   max-width: 1300px;
   margin: 20px auto;
@@ -210,7 +369,7 @@ justify-content: space-around;
 }
 
 .blocksinfo {
-  background-color: rgb(3, 14, 164);
+  background-color:#e86ee6;
   display: flex;
   justify-content: space-around;
   flex-direction: row;
@@ -237,7 +396,7 @@ justify-content: space-around;
 .synopsis-block {
   background-color: #f4f6f8;
   padding: 12px 16px;
-  border-left: 4px solid #4a90e2;
+ 
   border-radius: 6px;
   margin-top: 10px;
   line-height: 1.5;
@@ -247,7 +406,7 @@ justify-content: space-around;
 }
 
 .comments {
-  background-color: rgb(191, 22, 207);
+  background-color:#928ee8;
   width: 90%;
   max-width: 1270px;
   margin-top: 20px;
@@ -261,7 +420,7 @@ justify-content: space-around;
 }
 
 .commentintro {
-  display: flex; 
+  display: flex;
   flex-direction: row;
   align-items: center;
   gap: 10px;
@@ -287,29 +446,29 @@ justify-content: space-around;
 
 .commentintro button:hover {
   background-color: #574fd6;
- 
 }
 
 .userreviews {
   display: flex;
   flex-direction: column;
+  align-items: center;      /* centers comment blocks horizontally */
   gap: 12px;
   width: 100%;
   max-width: 800px;
-  height: 400px;
-  
-  
+  margin-top: 20px;         /* space between button and comments */
 }
+
 
 .review {
   background-color: #f4f6f8;
   padding: 12px 16px;
   border-radius: 8px;
-  height: 50px;
-  width: 500px;
+  width: 100%;              /* responsive */
+  max-width: 500px;         /* keeps nice size */
   text-align: left;
   color: #6c63ff;
 }
+
 
 .review p {
   margin: 4px 0;
@@ -350,39 +509,46 @@ justify-content: space-around;
   }
 }
 
-
-
-
-
-
 /* about */
 
-
-  .navigationabout {
+/* Navigation bar */
+/* Navigation bar */
+.navigationabout {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;  /* space between items */
-  align-items: center;            /* vertical alignment */
+  justify-content: space-around;
+  align-items: center;
   background-color: blueviolet;
   padding: 20px;
 }
 
+
+.navigationabout h4 {
+  font-size: 2rem;       /* larger text */
+  font-weight: 700;      /* bold */
+  letter-spacing: 2px;   /* spacing between letters for horizontal emphasis */
+  color: #ffffff;        /* white text on blueviolet background */
+  text-transform: uppercase; /* optional: all caps */
+  margin: 0;    
+  padding-right: 75px;        
+}
+  
+
 .navigationabout button {
   padding: 8px 16px;
   cursor: pointer;
+  border-radius: 5px;
+  border-style: none;
 }
-
 
 .containerabout {
   display: flex;
-  justify-content: center;   /* center horizontally */
-  align-items: center;       /* center vertically */
-  min-height: 80vh;          /* takes most of screen height */
-  background-color: #f2f2f2; /* light background */
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  background-color: #f2f2f2;
 }
 
-
-/* Big centered colored block */
 .containerabout > div {
   background-color: #ffffff;
   padding: 40px;
@@ -393,17 +559,456 @@ justify-content: space-around;
   text-align: center;
 }
 
+.textreview {
+  color: black;
+  font-size: 20px;
+  
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  
+}
 
-/* Inner block for reviews */
 .myreviews {
-  background-color: #e6d6ff;  /* light purple */
+  background-color: #e6d6ff;
   padding: 20px;
-  height: 500px;
   margin-top: 20px;
   border-radius: 8px;
+  height: 490px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
-.textreview{
-  color: black;
+.review-block {
+  background-color: #fff;
+  padding: 15px 20px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+
 }
+
+.textreview h4 {
+  font-size: 1.8rem; 
+  font-weight: 700; 
+  margin-bottom: 20px; 
+  color: #333;      
+
+  
+}
+.review-user {
+  font-weight: bold;
+  margin-right: 20px;
+  color: #000000;
+}
+
+.review-text {
+  flex: 1;
+  margin-right: 20px;
+  text-align: left;
+  color: #000000;
+}
+
+.review-block button {
+  padding: 6px 12px;
+  cursor: pointer;
+  border-radius: 5px;
+  border-style: none;
+}
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  min-width: 400px;
+  max-width: 80%;
+}
+.about-button {
+  display: none;
+  background-color: #ffffff;
+}
+.about-button-link {
+  display: hidden;
+}
+
+/* Modal overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Modal container */
+.modal {
+  background-color: #fff;
+  padding: 30px 40px;
+  border-radius: 15px;
+  min-width: 350px;
+  max-width: 500px;
+  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Modal header */
+.modal h3 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #4a4a4a;
+  text-align: center;
+}
+
+/* Form labels */
+.modal label {
+  font-weight: 600;
+  margin-bottom: 5px;
+  display: block;
+  color: #333;
+}
+
+/* Inputs & textarea */
+.modal input,
+.modal textarea {
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.modal input:focus,
+.modal textarea:focus {
+  border-color: #6c63ff;
+  box-shadow: 0 0 5px rgba(108, 99, 255, 0.3);
+  outline: none;
+}
+
+/* Buttons */
+.modal button {
+  padding: 10px 18px;
+  margin-top: 5px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s ease-in-out;
+}
+
+.modal button[type="submit"] {
+  background-color: #6c63ff;
+  color: white;
+}
+
+.modal button[type="submit"]:hover {
+  background-color: #574eda;
+}
+
+.modal button[type="button"] {
+  background-color: #f0f0f0;
+  color: #333;
+  margin-left: 5px;
+}
+
+.modal button[type="button"]:hover {
+  background-color: #e0e0e0;
+}
+
+.modal button.delete-btn {
+  background-color: #ff5f5f;
+  color: white;
+}
+
+.modal button.delete-btn:hover {
+  background-color: #e03f3f;
+}
+
+/* ----------------- Media Queries: Tablet & Phone ----------------- */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+    text-align: center;
+  }
+
+  .navigation {
+    flex-direction: column;
+    height: auto;
+    padding: 10px;
+  }
+
+  .container,
+  .blocks,
+  .blocksinfo,
+  .allbookscontainer,
+  .booklist,
+  .booksmonth,
+  .containerabout > div {
+    flex-direction: column;
+    width: 100%;
+    gap: 15px;
+    align-items: center;
+  }
+
+  .buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .buttons a,
+  .buttons .discover > div {
+    padding: 8px 12px;
+    font-size: 14px;
+    min-width: 60px;
+  }
+
+  .category-menu {
+    left: 0;
+    transform: none;
+    min-width: 100px;
+  }
+
+  /* Homepage adjustments */
+  .homepage {
+    width: 100%;
+    height: auto;
+    padding: 20px 0;
+  }
+
+  .blocks {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .block1 {
+    width: 90%;
+    height: auto;
+    padding: 20px;
+  }
+
+  .block1 h1 {
+    font-size: 32px;
+  }
+
+  .block2 {
+    width: 90%;
+    height: auto;
+    padding: 15px;
+  }
+
+  .block2 h2 {
+    font-size: 24px;
+  }
+
+  .booksmonth img,
+  .book-image {
+    width: 120px;
+    height: 180px;
+  }
+
+  .texth {
+    font-size: 12px;
+    padding: 3px 6px;
+    height: auto;
+  }
+
+  .booklist {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    gap: 15px;
+    padding: 10px;
+  }
+
+  .booklist img {
+    width: 70px;
+    height: 90px;
+  }
+
+  .ProjectBook {
+    min-width: 80px;
+    padding: 8px;
+  }
+
+  .blocksinfo img {
+    max-width: 150px;
+  }
+
+  .textbook {
+    max-width: 100%;
+  }
+
+  .synopsis-block {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .comments,
+  .userreviews,
+  .review {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .navigationabout {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .navigationabout h4 {
+    font-size: 1.5rem;
+    padding-right: 0;
+    text-align: center;
+  }
+
+  .containerabout > div {
+    width: 90%;
+    height: auto;
+    padding: 20px;
+  }
+
+  .myreviews {
+    height: auto;
+  }
+
+  .modal {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .modal input,
+  .modal textarea {
+    font-size: 14px;
+  }
+
+  .modal button {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 13px;
+  }
+
+  .navigation {
+    padding: 8px;
+  }
+
+  .buttons a,
+  .buttons .discover > div {
+    padding: 6px 10px;
+    font-size: 12px;
+    min-width: 50px;
+  }
+
+  /* Homepage adjustments for phone */
+  .homepage {
+    padding: 15px 0;
+  }
+
+  .blocks {
+    gap: 15px;
+  }
+
+  .block1 {
+    width: 95%;
+    padding: 15px;
+  }
+
+  .block1 h1 {
+    font-size: 22px;
+  }
+
+  .block2 {
+    width: 95%;
+    padding: 10px;
+  }
+
+  .block2 h2 {
+    font-size: 20px;
+  }
+
+  .booksmonth img,
+  .book-image {
+    width: 100px;
+    height: 150px;
+  }
+
+  .texth {
+    font-size: 11px;
+    padding: 2px 5px;
+  }
+
+  .booklist img {
+    width: 60px;
+    height: 80px;
+  }
+
+  .ProjectBook {
+    min-width: 70px;
+    padding: 6px;
+  }
+
+  .blocksinfo img {
+    max-width: 120px;
+  }
+
+  .synopsis-block {
+    font-size: 13px;
+    padding: 8px;
+  }
+
+  .navigationabout h4 {
+    font-size: 1.3rem;
+  }
+
+  .containerabout > div {
+    width: 95%;
+    padding: 15px;
+  }
+
+  .modal {
+    width: 95%;
+    padding: 15px;
+  }
+
+  .modal input,
+  .modal textarea {
+    font-size: 13px;
+  }
+
+  .modal button {
+    font-size: 13px;
+    padding: 6px 10px;
+  }
+}
+
 
