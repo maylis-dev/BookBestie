@@ -116,7 +116,7 @@ body {
   text-align: center;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   font-weight: bolder;
-  font-size: clamp(30px, 5vw, 60px); /* taille responsive */
+  font-size: clamp(30px, 5vw, 60px); 
 }
 
 .block2 {
@@ -245,10 +245,10 @@ color: white;
   background-color: aliceblue;
   width: 100%;
   min-height: 100vh;
-  padding: 40px 20px; /* space around the pink block */
+  padding: 40px 20px; 
   box-sizing: border-box;
   display: flex;
-  justify-content: center;  /* center horizontally */
+  justify-content: center;
 }
 
 /* ===== PINK BOOK AREA ===== */
@@ -257,12 +257,12 @@ color: white;
 
   display: flex;
   flex-wrap: wrap;
-  justify-content: center; /* center books */
+  justify-content: center; 
   gap: 25px;
 
   width: 100%;
-  max-width: 1200px;   /* prevent overflow */
-  padding: 40px;       /* IMPORTANT: space inside so books don't touch border */
+  max-width: 1200px;   
+  padding: 40px;       
 
   box-sizing: border-box;
   border-radius: 20px;
@@ -272,7 +272,7 @@ color: white;
 .ProjectBook {
   background-color: #574fd6;
   padding: 15px;
-  width: 140px; /* fixed clean size */
+  width: 140px; 
   
   display: flex;
   flex-direction: column;
@@ -341,11 +341,11 @@ color: white;
   transition: background-color 0.3s;
 }
 .book-info-title {
-  font-size: 2rem;       /* bigger text */
-  font-weight: 700;      /* bold */
-  letter-spacing: 1px;   /* optional: slightly spaced letters */
-  color: #222;           /* optional: darker color */
-  margin: 0;             /* optional: remove extra spacing */
+  font-size: 2rem;       
+  font-weight: 700;      
+  letter-spacing: 1px;   
+  color: #222;           
+  margin: 0;           
 }
 
 
@@ -451,11 +451,11 @@ color: white;
 .userreviews {
   display: flex;
   flex-direction: column;
-  align-items: center;      /* centers comment blocks horizontally */
+  align-items: center;      
   gap: 12px;
   width: 100%;
   max-width: 800px;
-  margin-top: 20px;         /* space between button and comments */
+  margin-top: 20px;         
 }
 
 
@@ -463,8 +463,8 @@ color: white;
   background-color: #f4f6f8;
   padding: 12px 16px;
   border-radius: 8px;
-  width: 100%;              /* responsive */
-  max-width: 500px;         /* keeps nice size */
+  width: 100%;              
+  max-width: 500px;        
   text-align: left;
   color: #6c63ff;
 }
@@ -524,11 +524,11 @@ color: white;
 
 
 .navigationabout h4 {
-  font-size: 2rem;       /* larger text */
-  font-weight: 700;      /* bold */
-  letter-spacing: 2px;   /* spacing between letters for horizontal emphasis */
-  color: #ffffff;        /* white text on blueviolet background */
-  text-transform: uppercase; /* optional: all caps */
+  font-size: 2rem;       
+  font-weight: 700;      
+  letter-spacing: 2px;   
+  color: #ffffff;    
+  text-transform: uppercase; 
   margin: 0;    
   padding-right: 75px;        
 }
